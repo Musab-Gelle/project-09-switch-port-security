@@ -1,0 +1,38 @@
+Project 9 - Switch Port Security
+ HQ Switch Configuration
+
+enable
+configure terminal
+
+! HR PC Port
+interface fa0/1
+ switchport mode access
+ switchport access vlan 10
+ switchport port-security
+ switchport port-security maximum 1
+ switchport port-security mac-address sticky
+ switchport port-security violation shutdown
+exit
+
+! IT PC Port
+interface fa0/2
+ switchport mode access
+ switchport access vlan 20
+ switchport port-security
+ switchport port-security maximum 1
+ switchport port-security mac-address sticky
+ switchport port-security violation shutdown
+exit
+
+! Finance PC Port
+interface fa0/3
+ switchport mode access
+ switchport access vlan 30
+ switchport port-security
+ switchport port-security maximum 1
+ switchport port-security mac-address sticky
+ switchport port-security violation shutdown
+exit
+
+end
+write memory
